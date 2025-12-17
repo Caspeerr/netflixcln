@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <div class="logo">NETFLIX</div>
+            <nav class="nav-menu">
+                <a href="#" class="active">Home</a>
+                <a href="#">TV Shows</a>
+                <a href="#">Movies</a>
+                <a href="#">New & Popular</a>
+                <a href="#">My List</a>
+                <a href="#">Browse by Languages</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <svg class="icon search-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg>
+            <div class="profile-dropdown">
+                <img src="images/zom-100_-bucket-list-of-the-dead-2023-poster.jpg" alt="Profile" class="profile-icon">
+                <svg class="icon dropdown-arrow" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M7 10l5 5 5-5z"/>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+<!-- Hero Banner -->
+<section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+        <source src="images/onepiecetr.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+        <h1 class="hero-title">One Piece</h1>
+        <p class="hero-description">
+            Join Monkey D. Luffy and his Straw Hat crew on an epic quest across the Grand Line to find the legendary treasure One Piece and become the King of the Pirates.
+        </p>
+        <div class="hero-buttons">
+            <button class="btn btn-play" id="playBtn">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+                Play
+            </button>
+            <button class="btn btn-info" id="moreInfoBtn">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                </svg>
+                More Info
+            </button>
+        </div>
+    </div>
+    <div class="hero-fade"></div>
+</section>
+    <!-- Video Player Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <video class="modal-video" id="modalVideo" controls>
+                <source src="images/onepiecetr.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+<!-- More Info Modal -->
+<div class="info-modal" id="infoModal">
+    <div class="info-modal-content">
+        <button class="close-modal" id="closeInfoModal">&times;</button>
+        <div class="info-modal-header">
+            <video autoplay muted loop playsinline style="width: 100%; height: 400px; object-fit: cover;">
+                <source src="images/onepiecetr.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="info-modal-body">
+            <h2>One Piece</h2>
+            <div class="info-metadata">
+                <span class="match">98% Match</span>
+                <span class="year">1999</span>
+                <span class="rating">TV-14</span>
+                <span class="seasons">20+ Seasons</span>
+            </div>
+            <p class="info-description">
+                Join Monkey D. Luffy and his Straw Hat crew on an epic quest across the Grand Line to find the legendary treasure One Piece and become the King of the Pirates.
+            </p>
+            <div class="info-tags">
+                <span>Action</span>
+                <span>Adventure</span>
+                <span>Fantasy</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Content Rows -->
+    <main class="content">
+        <!-- Trending Now -->
+        <section class="row">
+            <h2 class="row-title">Trending Now</h2>
+            <div class="row-container">
+                <button class="row-arrow row-arrow-left">‹</button>
+                <div class="row-slider">
+                    <div class="card" data-id="1">
+                        <img src="images/03172277_poster_w780.jpg" alt="1">
+                        <div class="card-hover">
+                            <div class="card-actions">
+                                <button class="card-btn play-btn">▶</button>
+                                <button class="card-btn">✓</button>
+                                <button class="card-btn">👍</button>
+                                <button class="card-btn more-btn">⌄</button>
+                            </div>
+                            <div class="card-metadata">
+                                <span class="rating">TV-MA</span>
+                                <span class="seasons">5 Seasons</span>
+                                <span class="quality">HD</span>
+                            </div>
+                            <div class="card-genres">
+                                Crime • Drama • Thriller
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-id="2">
+                        <img src="images/2PBCAQMR8CNSzsQmFhheWE.jpg" alt="2">
+                        <div class="card-hover">
+                            <div class="card-actions">
+                                <button class="card-btn play-btn">▶</button>
+                                <button class="card-btn">✓</button>
+                                <button class="card-btn">👍</button>
+                                <button class="card-btn more-btn">⌄</button>
+                            </div>
+                            <div class="card-metadata">
+                                <span class="rating">TV-MA</span>
+                                <span class="seasons">3 Seasons</span>
+                                <span class="quality">4K</span>
+                            </div>
+                            <div class="card-genres">
+                                Fantasy • Action • Adventure
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-id="3">
+                        <img src="images/3ZuRXFrs56yYkLQ8YSJJWh.jpg" alt="3">
+                        <div class="card-hover">
+                            <div class="card-actions">
+                                <button class="card-btn play-btn">▶</button>
+                                <button class="card-btn">✓</button>
+                                <button class="card-btn">👍</button>
+                                <button class="card-btn more-btn">⌄</button>
+                            </div>
+                            <div class="card-metadata">
+                                <span class="rating">TV-14</span>
+                                <span class="seasons">1 Season</span>
+                                <span class="quality">HD</span>
+                            </div>
+                            <div class="card-genres">
+                                Comedy • Mystery • Supernatural
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-id="4">
+                        <img src="images/4KDDpAVc2cYFddcnQwrnDF.jpg" alt="4">
+                        <div class="card-hover">
+                            <div class="card-actions">
+                                <button class="card-btn play-btn">▶</button>
+                                <button class="card-btn">✓</button>
+                                <button class="card-btn">👍</button>
+                                <button class="card-btn more-btn">⌄</button>
+                            </div>
+                            <div class="card-metadata">
+                                <span class="rating">TV-MA</span>
+                                <span class="seasons">4 Seasons</span>
+                                <span class="quality">HD</span>
+                            </div>
+                            <div class="card-genres">
+                                Crime • Drama • Thriller
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-id="5">
+                        <img src="images/4XarmKhLdcmCRrQ6WLmJhN.jpg" alt="5">
+                        <div class="card-hover">
+                            <div class="card-actions">
+                                <button class="card-btn play-btn">▶</button>
+                                <button class="card-btn">✓</button>
+                                <button class="card-btn">👍</button>
+                                <button class="card-btn more-btn">⌄</button>
+                            </div>
+                            <div class="card-metadata">
+                                <span class="rating">TV-MA</span>
+                                <span class="seasons">6 Seasons</span>
+                                <span class="quality">4K</span>
+                            </div>
+                            <div class="card-genres">
+                                Drama • Historical • Biography
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-id="6">
+                        <img src="images/6i2qpXzn5MxJeH8YUZfhte-840-80.jpg" alt="6">
+                        <div class="card-hover">
+                            <div class="card-actions">
+                                <button class="card-btn play-btn">▶</button>
+                                <button class="card-btn">✓</button>
+                                <button class="card-btn">👍</button>
+                                <button class="card-btn more-btn">⌄</button>
+                            </div>
+                            <div class="card-metadata">
+                                <span class="rating">TV-MA</span>
+                                <span class="seasons">2 Seasons</span>
+                                <span class="quality">4K</span>
+                            </div>
+                            <div class="card-genres">
+                                Thriller • Drama • Action
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-id="13">
+                        <img src="images/A-Lull-In-The-Sea-Anime-Netflix.jpg" alt="7">
+                        <div class="card-hover">
+                            <div class="card-actions">
+                                <button class="card-btn play-btn">▶</button>
+                                <button class="card-btn">✓</button>
+                                <button class="card-btn">👍</button>
+                                <button class="card-btn more-btn">⌄</button>
+                            </div>
+                            <div class="card-metadata">
+                                <span class="rating">TV-MA</span>
+                                <span class="seasons">3 Seasons</span>
+                                <span class="quality">HD</span>
+                            </div>
+                            <div class="card-genres">
+                                Sci-Fi • Mystery • Thriller
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-id="14">
+                        <img src="images/AAAABa51pwxJTmq54Yx12NdOGKvWMb0j24QUwjJ0B3dBxhndeqWjFzS35kWLmteOsCNdWXMgQx7DvXXSKmqt4waq4qpskEtVXOc_Uqs.jpg" alt="8">
+                        <div class="card-hover">
+                            <div class="card-actions">
+                                <button class="card-btn play-btn">▶</button>
+                                <button class="card-btn">✓</button>
+                                <button class="card-btn">👍</button>
+                                <button class="card-btn more-btn">⌄</button>
+                            </div>
+                            <div class="card-metadata">
+                                <span class="rating">TV-MA</span>
+                                <span class="seasons">5 Seasons</span>
+                                <span class="quality">HD</span>
+                            </div>
+                            <div class="card-genres">
+                                Crime • Action • Thriller
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-id="15">
+                        <img src="images/AAAABaClQHQk2wwVcG1AYugUpew-Wy5jnHVawbPkjsAy3AaIcP9dlE-AwlnV8oXO5Ha4q0cKSsC5u4jsx2sgInu7OONXdDaJLdjQUXw.jpg" alt="9">
+                        <div class="card-hover">
+                            <div class="card-actions">
+                                <button class="card-btn play-btn">▶</button>
+                                <button class="card-btn">✓</button>
+                                <button class="card-btn">👍</button>
+                                <button class="card-btn more-btn">⌄</button>
+                            </div>
+                            <div class="card-metadata">
+                                <span class="rating">TV-MA</span>
+                                <span class="seasons">6 Seasons</span>
+                                <span class="quality">4K</span>
+                            </div>
+                            <div class="card-genres">
+                                Sci-Fi • Thriller • Anthology
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-id="16">
+                        <img src="images/AAAABaFUbrhAhbHGVhK6pFHuZBxfwWmdqoB8Z23Oy9TzJpEfs7SFLotBMixwTdlgDgWROTQ9Q8yh1WPOgPUl09LZE57VVYj7FlgpgPA.jpg" alt="10">
+                        <div class="card-hover">
+                            <div class="card-actions">
+                                <button class="card-btn play-btn">▶</button>
+                                <button class="card-btn">✓</button>
+                                <button class="card-btn">👍</button>
+                                <button class="card-btn more-btn">⌄</button>
+                            </div>
+                            <div class="card-metadata">
+                                <span class="rating">TV-MA</span>
+                                <span class="seasons">3 Seasons</span>
+                                <span class="quality">HD</span>
+                            </div>
+                            <div class="card-genres">
+                                Crime • Biography • Drama
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="row-arrow row-arrow-right">›</button>
+            </div>
+        </section>
+
+        <!-- Popular on Netflix -->
+        <section class="row">
+            <h2 class="row-title">Popular on Netflix</h2>
+            <div class="row-container">
+                <button class="row-arrow row-arrow-left">‹</button>
+                <div class="row-slider">
+                    <div class="card" data-id="7">
+                        <img src="images/AAAABaP3sHmZwoAdJKuAEm1W805jRu_mNULmfVm_mqnn6klOn8-0FCLzntc5etJiYQeKpIXxrhCU1I80bPfVugSy8y3Xmsz6VEYgeqc.jpg" alt="a1">
+                        <div class="card-hover">
+                            <div class="card-actions">
+                                <button class="card-btn play-btn">▶</button>
+                                <button class="card-btn">✓</button>
+                                <button class="card-btn">👍</button>
+                                <button class="card-btn more-btn">⌄</button>
+                            </div>
+                            <div class="card-metadata">
+                                <span class="rating">TV-MA</span>
+                                <span class="seasons">1 Season</span>
+                                <span class="quality">4K</span>
+                            </div>
+                            <div class="card-genres">
+                                Drama • Action • Post-Apocalyptic
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-id="8">
+                        <img src="images/AAAABaQgOuJJXIryO-fnx2Ab-KgTR7oUig0SPMgZkRE8zTuhB7hSeea5FOVALGNsyUKTFDra5IsOmKyNiN7eecF4Fo8vIRKA5teiQ6k.jpg" alt="a2">
+                        <div class="card-hover">
+                            <div class="card-actions">
+                                <button class="card-btn play-btn">▶</button>
+                                <button class="card-btn">✓</button>
+                                <button class="card-btn">👍</button>
+                                <button class="card-btn more-btn">⌄</button>
+                            </div>
+                            <div class="card-metadata">
+                                <span class="rating">TV-MA</span>
+                                <span class="seasons">6 Seasons</span>
+                                <span class="quality">HD</span>
+                            </div>
+                            <div class="card-genres">
+                                Crime • Drama • Historical
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-id="9">
+                        <img src="images/AAAABas145BiG5kKsN1I5po_5uZhQ3ILp_gY25i6Jvtck7qyXHi5GX5XDTZ8qXGwpSSTLIPYMQazpitspI_21marWjobv7lJt3hjkQs.jpg" alt="a3">
+                        <div class="card-hover">
+                            <div class="card-actions">
+                                <button class="card-btn play-btn">▶</button>
+                                <button class="card-btn">✓</button>
+                                <button class="card-btn">👍</button>
+                                <button class="card-btn more-btn">⌄</button>
+                            </div>
+                            <div class="card-metadata">
+                                <span class="rating">TV-MA</span>
+                                <span class="seasons">3 Seasons</span>
+                                <span class="quality">4K</span>
+                            </div>
+                            <div class="card-genres">
+                                Romance • Drama • Period
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-id="10">
+                        <img src="images/AAAABawRBHt3qCSGDgE8SSLqFrv1EhVBtQstnNgKdUBlVkKlpUAAeFJ7uUifJWz5i5B23N-eUtn96BV-boiC1BZliGTIPJgU3_0vUPc.jpg" alt="a4">
+                        <div class="card-hover">
+                            <div class="card-actions">
+                                <button class="card-btn play-btn">▶</button>
+                                <button class="card-btn">✓</button>
+                                <button class="card-btn">👍</button>
+                                <button class="card-btn more-btn">⌄</button>
+                            </div>
+                            <div class="card-metadata">
+                                <span class="rating">TV-14</span>
+                                <span class="seasons">4 Seasons</span>
+                                <span class="quality">HD</span>
+                            </div>
+                            <div class="card-genres">
+                                Action • Comedy • Superhero
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-id="11">
+                        <img src="images/AAAABaTENwR9sgsvG-fHRo70lYNAzoJkg6-E7tUGQtpEnTfIXS7vIoae6Z0hYw5uCD78ub2fwvDOZD62dbgKyBUr37Zy1m_RKnks2Eo.jpg" alt="a5">
+                        <div class="card-hover">
+                            <div class="card-actions">
+                                <button class="card-btn play-btn">▶</button>
+                                <button class="card-btn">✓</button>
+                                <button class="card-btn">👍</button>
+                                <button class="card-btn more-btn">⌄</button>
+                            </div>
+                            <div class="card-metadata">
+                                <span class="rating">TV-MA</span>
+                                <span class="seasons">6 Seasons</span>
+                                <span class="quality">HD</span>
+                            </div>
+                            <div class="card-genres">
+                                Action • Drama • Historical
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-id="12">
+                        <img src="images/AAAABY8_G_ft9ZrOUK-owuGoOp7apX58RqPymarlUFWAszjGqafa02w2VmwL8HIoN2Afei4r3dWXzKMXsN37P_zpHQaqm429nGBQl2U.jpg" alt="a6">
+                        <div class="card-hover">
+                            <div class="card-actions">
+                                <button class="card-btn play-btn">▶</button>
+                                <button class="card-btn">✓</button>
+                                <button class="card-btn">👍</button>
+                                <button class="card-btn more-btn">⌄</button>
+                            </div>
+                            <div class="card-metadata">
+                                <span class="rating">TV-14</span>
+                                <span class="seasons">6 Seasons</span>
+                                <span class="quality">HD</span>
+                            </div>
+                            <div class="card-genres">
+                                Fantasy • Crime • Comedy
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-id="17">
+                        <img src="images/B-The-Beginning.jpg" alt="a7">
+                        <div class="card-hover">
+                            <div class="card-actions">
+                                <button class="card-btn play-btn">▶</button>
+                                <button class="card-btn">✓</button>
+                                <button class="card-btn">👍</button>
+                                <button class="card-btn more-btn">⌄</button>
+                            </div>
+                            <div class="card-metadata">
+                                <span class="rating">TV-MA</span>
+                                <span class="seasons">1 Season</span>
+                                <span class="quality">4K</span>
+                            </div>
+                            <div class="card-genres">
+                                Fantasy • Drama • Horror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-id="18">
+                        <img src="images/AAAABR_0loMaDDH_XGlLstIaPmPHNv7DyTuMa2AatC_Gc_MjoMDJpmmy35yT-Vbmp6Ddr48Krb5JGwxMjEQSMGOySnRDGkiAxBUYKZg.jpg" alt="a8">
+                        <div class="card-hover">
+                            <div class="card-actions">
+                                <button class="card-btn play-btn">▶</button>
+                                <button class="card-btn">✓</button>
+                                <button class="card-btn">👍</button>
+                                <button class="card-btn more-btn">⌄</button>
+                            </div>
+                            <div class="card-metadata">
+                                <span class="rating">TV-14</span>
+                                <span class="seasons">2 Seasons</span>
+                                <span class="quality">4K</span>
+                            </div>
+                            <div class="card-genres">
+                                Animation • Action • Fantasy
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-id="19">
+                        <img src="images/MV5BNDI0ZjAwZmQtNDViYy00ZGU3LTliZWQtMjdmYmM5ZTJmZDNkXkEyXkFqcGc@.jpg" alt="a9">
+                        <div class="card-hover">
+                            <div class="card-actions">
+                                <button class="card-btn play-btn">▶</button>
+                                <button class="card-btn">✓</button>
+                                <button class="card-btn">👍</button>
+                                <button class="card-btn more-btn">⌄</button>
+                            </div>
+                            <div class="card-metadata">
+                                <span class="rating">TV-MA</span>
+                                <span class="seasons">4 Seasons</span>
+                                <span class="quality">HD</span>
+                            </div>
+                            <div class="card-genres">
+                                Thriller • Drama • Psychological
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-id="20">
+                        <img src="images/Beastars-Season-2-Poster.jpg" alt="a10">
+                        <div class="card-hover">
+                            <div class="card-actions">
+                                <button class="card-btn play-btn">▶</button>
+                                <button class="card-btn">✓</button>
+                                <button class="card-btn">👍</button>
+                                <button class="card-btn more-btn">⌄</button>
+                            </div>
+                            <div class="card-metadata">
+                                <span class="rating">TV-MA</span>
+                                <span class="seasons">1 Season</span>
+                                <span class="quality">4K</span>
+                            </div>
+                            <div class="card-genres">
+                                Drama • Period • Chess
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="row-arrow row-arrow-right">›</button>
+            </div>
+        </section>
+    </main>
+
+<footer class="netflix-footer">
+
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-youtube"></i>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="footer-columns">
+
+            <ul>
+                <li><a href="#">Audio Description</a></li>
+                <li><a href="#">Investor Relations</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Legal Notices</a></li>
+                <li><a href="#">Ad Choices</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="#">Gift Cards</a></li>
+                <li><a href="#">Netflix Shop</a></li>
+                <li><a href="#">Cookie Preferences</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="#">Media Center</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Corporate Information</a></li>
+            </ul>
+
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            © 1997-2025 Netflix, Inc.
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+    <script src="script.js"></script>
+</body>
+</html>
