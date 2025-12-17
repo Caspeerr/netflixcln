@@ -529,6 +529,19 @@ body {
 .social-icons i:hover {
     opacity: 0.7;
 }
+.social-icons svg {
+    width: 28px;
+    height: 28px;
+    color: #fff;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    flex-shrink: 0;
+}
+
+.social-icons svg:hover {
+    opacity: 0.7;
+}
+
 
 /* Footer Columns */
 .footer-columns {
